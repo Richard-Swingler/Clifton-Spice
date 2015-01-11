@@ -11,6 +11,7 @@ angular.module('controllers', ['ionic'])
   });
 })
 .controller('mapsCtrl', function($scope) {
+  console.log($scope.response);
   var myLatlng = new google.maps.LatLng(51.381142, -2.373386);
 
   var mapOptions = {
