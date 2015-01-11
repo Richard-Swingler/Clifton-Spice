@@ -1,9 +1,10 @@
 angular.module('services', [])
 
-.factory('data', function() {
-	var data = {
-    'home':{
-    header: 'Home Page',
+.factory('data', function($http) {
+  
+  var data = {
+  'home':{
+    header: 'heya',
     link1: 'Contact us',
     link2: 'Vineyard',
     link3: 'Holidays',
@@ -18,12 +19,12 @@ angular.module('services', [])
   },
   'info1': {
     header:'Vineyard',
-    content:'Some more sample text about vineyards',
+    content:'Some more sample text about vineyards and lovely lavender',
     img:'/img/provence.jpg'
   },
   'info2': {
     header:'Holidays',
-    content:'Some sample text about teh pretty house and the holidays',
+    content:'Some sample text about the pretty house and the holidays',
     img:'/img/aspra.jpg'
   },
   'maps':{
@@ -39,6 +40,9 @@ return {
 	get: function(page) {
 	  // Simple index lookup
 	  return data[page];
-	}
+	},
+  api: function(){
+    return $http.get('http://clifton-spice.d7-services.uk/data/1');
+  }
 }
 })

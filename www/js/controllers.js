@@ -1,8 +1,14 @@
 angular.module('controllers', ['ionic'])
 
-.controller('dataSourceCtrl', function($scope, data) {
+.controller('dataSourceCtrl', function($scope, $http, data) {
 	$scope.test = '<h1>some data</h1>';
-	$scope.data = data.all();
+  data.api().success(function(response){
+    $scope.data = response;
+    console.log(response.home_header);
+  })
+  .error(function(){
+    $scope.data = data.all();
+  });
 })
 .controller('mapsCtrl', function($scope) {
   var myLatlng = new google.maps.LatLng(51.381142, -2.373386);
@@ -23,7 +29,5 @@ angular.module('controllers', ['ionic'])
       raiseOnDrag: true,
       labelContent: "The mint Room",
   });
-
-
   $scope.map = map;
 });
