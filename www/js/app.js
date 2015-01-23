@@ -30,9 +30,24 @@ angular.module('clifton-spice', ['ionic', 'controllers', 'services'])
     templateUrl: '/templates/info1.html',
     controller: 'dataSourceCtrl'
   }),
+  $stateProvider.state('productSelect', {
+    url: '/productSelect',
+    templateUrl: '/templates/productSelect.html',
+    controller: 'dataSourceCtrl'
+  }),
   $stateProvider.state('info2', {
     url: '/info2',
     templateUrl: '/templates/info2.html',
+    controller: 'dataSourceCtrl'
+  }),
+  $stateProvider.state('info3', {
+    url: '/info3',
+    templateUrl: '/templates/info3.html',
+    controller: 'dataSourceCtrl'
+  }),
+  $stateProvider.state('info4', {
+    url: '/info4',
+    templateUrl: '/templates/info4.html',
     controller: 'dataSourceCtrl'
   }),
   $stateProvider.state('contact', {
